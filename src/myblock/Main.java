@@ -33,7 +33,7 @@ public class Main extends PluginBase implements Listener{
 		if (name == null) {
 			return;
 		}
-		if (!name.equals(player.getName().toLowerCase()) || player.isOp()) {
+		if (!name.equals(player.getName().toLowerCase()) || !player.isOp()) {
 			event.setCancelled();
 		} else {
 			blockDB.remove(pos);
