@@ -28,15 +28,15 @@ public class Main extends PluginBase implements Listener{
 	public void onBreak(BlockBreakEvent event) {
 		Player player = event.getPlayer();
 		Block block = event.getBlock();
-		if (player.isOp()) {
-			return;
-		}
-		String name = blockDB.get(posToString(new Position(block.getX(), block.getY(), block.getZ(), block.getLevel())), null);
+		String pos = posToString(new Position(block.getX(), block.getY(), block.getZ(), block.getLevel()));
+		String name = blockDB.get(pos, null);
 		if (name == null) {
 			return;
 		}
-		if (!name.equals(player.getName().toLowerCase())) {
+		if (!name.equals(player.getName().toLowerCase()) || player.isOp()) {
 			event.setCancelled();
+		} else {
+			blockDB.remove(pos);
 		}
 	}
 	public String posToString(Position pos) {
