@@ -2,4 +2,13 @@ name: MyBlock
 main: myblock.Main
 author: maru
 api: ["1.0.0"]
-version: "1.0.2"
+version: "1.1.0"
+
+commands:
+ 편집:
+  description: "편집모드로 들어갑니다. 입력후 설치한 블럭은 누구나 부술 수 있습니다."
+  usage: "/편집"
+  
+permissions:
+ myblock.commands.edit:
+  default: true
