@@ -1,0 +1,5 @@
+name: MyBlock
+main: myblock.Main
+author: maru
+api: ["1.0.0"]
+version: "1.0.0"
